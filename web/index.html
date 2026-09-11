@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dino with face</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="menu-screen" class="screen menu-screen">
+      <div class="sky sky-one"></div>
+      <div class="sky sky-two"></div>
+      <div class="menu-panel">
+        <p class="eyebrow">FACE CONTROLLED RUNNER</p>
+        <h1>Dino with face</h1>
+        <p class="tagline">RUN - JUMP - SURVIVE</p>
+        <div class="menu-actions">
+          <button id="start-button" class="primary-button">Start game</button>
+          <button id="settings-button" class="secondary-button">Settings</button>
+          <div class="compact-actions">
+            <button id="scoreboard-button" class="secondary-button">Scoreboard</button>
+            <button id="how-to-play-button" class="secondary-button">How to play</button>
+          </div>
+        </div>
+        <p class="high-score">HIGH SCORE <strong id="menu-high-score">0</strong></p>
+      </div>
+      <img class="menu-dino" src="../pictures/Chrome_T-Rex_Right_Run.webp" alt="">
+      <div class="menu-ground"></div>
+    </section>
+
+    <section id="game-screen" class="screen game-screen hidden">
+      <div class="game-toolbar">
+        <button id="quit-button" class="small-button">Menu</button>
+        <span id="score-label">Score 0</span>
+        <button id="camera-button" class="small-button">Camera off</button>
+      </div>
+      <div class="game-layout">
+        <canvas id="game-canvas" width="1100" height="600"></canvas>
+        <aside class="camera-card">
+          <video id="camera-video" autoplay muted playsinline></video>
+          <p id="camera-status">Camera off</p>
+        </aside>
+      </div>
+      <p class="game-hint">Open your mouth to jump. Look down or press Down to duck.</p>
+    </section>
+
+    <section id="settings-screen" class="screen utility-screen hidden">
+      <div class="utility-panel">
+        <h2>Settings</h2>
+        <p>Camera control: <strong id="camera-setting-status">Off</strong></p>
+        <button id="settings-camera-button" class="primary-button">Turn camera on</button>
+        <p class="utility-hint">Use + and - to change volume.</p>
+        <button class="back-button" data-back-menu>Press any key except C to return</button>
+      </div>
+    </section>
+
+    <section id="scoreboard-screen" class="screen utility-screen hidden">
+      <div class="utility-panel">
+        <h2>Scoreboard</h2>
+        <p class="score-number" id="scoreboard-high-score">0</p>
+        <p>Best run</p>
+        <button class="back-button" data-back-menu>Return to menu</button>
+      </div>
+    </section>
+
+    <section id="how-to-play-screen" class="screen utility-screen hidden">
+      <div class="utility-panel instructions">
+        <h2>How to play</h2>
+        <p><strong>Space / Up</strong> or open your mouth: jump</p>
+        <p><strong>Down</strong> or look down: duck</p>
+        <p>Jump over cactuses and duck under birds.</p>
+        <p>Birds start appearing from score 300.</p>
+        <button class="back-button" data-back-menu>Return to menu</button>
+      </div>
+    </section>
+
+    <section id="game-over-screen" class="screen utility-screen hidden">
+      <div class="utility-panel">
+        <h2>Run over</h2>
+        <p id="final-score"></p>
+        <button id="restart-button" class="primary-button">Run again</button>
+        <button class="back-button" data-back-menu>Return to menu</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
